@@ -1,12 +1,32 @@
-# React + Vite
+# 🧮 Zustand Counter App (with Reset Function)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React + Zustand project that demonstrates how to manage global state using Zustand. The app features a counter with **increment**, **decrement**, and **reset** functionality.
 
-Currently, two official plugins are available:
+## 🚀 Built With
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Vite](https://vitejs.dev/) – Fast React development
+- [React](https://reactjs.org/)
+- [Zustand](https://github.com/pmndrs/zustand) – State management made simple
 
-## Expanding the ESLint configuration
+## 🧠 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Global state using Zustand
+- Actions: `increment`, `decrement`, `resetCount`
+- Component-level reactivity using selectors
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/ArchieK9/zustand_counter.git
+cd zustand_counter
+npm install
+npm run dev
+
+const useCounterStore = create((set) => ({
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+  decrement: () => set((state) => ({ count: state.count - 1 })),
+  resetCount: () => set({ count: 0 }),
+}));
